@@ -1,4 +1,5 @@
 global class AccountBatchClass implements Database.Batchable<sObject>{
+    //batch apex class
     global Database.QueryLocator start(Database.BatchableContext bc) {
         String s = 'SELECT Name,Type from Account WHERE Type=\'Customer - Direct\'';
         return Database.getQueryLocator(s);
