@@ -1,5 +1,5 @@
-trigger CaseTrigger on Case (before insert,before update) {
-    if((trigger.isInsert || trigger.isUpdate) & trigger.isBefore){
-        CaseTriggerHandler.updateStatusField(trigger.new);
+trigger caseTrigger on Case (before insert) {
+    if(trigger.isInsert && trigger.isBefore){
+        CaseTriggerHandler.updateNewCase(trigger.new);
     }
 }
