@@ -1,7 +1,10 @@
 public with sharing class EmployeeTriggerHandler {
     public static void updateRecord(Map<Id,Employee__c> newMap){
 
+<<<<<<< HEAD
         //update the same record in the after insert event using SOQL
+=======
+>>>>>>> 3f4946f78078945634cf765184f6a4692db552c5
         Set<Id> newIds = newMap.keyset();
         List<Employee__c> empList = [SELECT Id, Name, Reisgned__c, Reason_for_resign__c from Employee__c WHERE ID IN : newIds];
         for(Employee__c e : empList){
